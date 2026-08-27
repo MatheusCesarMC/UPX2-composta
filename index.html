@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composta+ | Coleta Sustentável</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <a class="logo" href="#inicio">🌱 Composta+</a>
+      <nav>
+        <a href="#restaurantes">Restaurantes</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-conteudo">
+        <span class="etiqueta">ODS 12.3 • Consumo e produção responsáveis</span>
+        <h1>Transformando resíduos orgânicos em novos recursos.</h1>
+        <p>Um protótipo de plataforma para conectar restaurantes à coleta de resíduos orgânicos destinados à compostagem.</p>
+        <a class="botao botao-principal" href="#restaurantes">Ver coletas disponíveis</a>
+      </div>
+    </section>
+
+    <section class="secao" id="restaurantes">
+      <div class="container">
+        <div class="titulo-secao">
+          <div>
+            <span class="subtitulo">Coletas disponíveis</span>
+            <h2>Restaurantes participantes</h2>
+          </div>
+          <span class="contador">3 locais</span>
+        </div>
+
+        <div class="grade-cards">
+          <article class="card">
+            <div class="card-icone">🍽️</div>
+            <div class="card-conteudo">
+              <span class="status">● Disponível para coleta</span>
+              <h3>Restaurante Sabor Mineiro</h3>
+              <p class="local">📍 Centro</p>
+              <div class="residuo"><span>Resíduo orgânico</span><strong>12 kg</strong></div>
+              <button class="botao solicitar" data-restaurante="Restaurante Sabor Mineiro">Solicitar coleta</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icone">🍕</div>
+            <div class="card-conteudo">
+              <span class="status">● Disponível para coleta</span>
+              <h3>Pizzaria Bella</h3>
+              <p class="local">📍 Savassi</p>
+              <div class="residuo"><span>Resíduo orgânico</span><strong>8 kg</strong></div>
+              <button class="botao solicitar" data-restaurante="Pizzaria Bella">Solicitar coleta</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icone">🥗</div>
+            <div class="card-conteudo">
+              <span class="status">● Disponível para coleta</span>
+              <h3>Bistrô Verde</h3>
+              <p class="local">📍 Funcionários</p>
+              <div class="residuo"><span>Resíduo orgânico</span><strong>15 kg</strong></div>
+              <button class="botao solicitar" data-restaurante="Bistrô Verde">Solicitar coleta</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao-clara" id="sobre">
+      <div class="container sobre">
+        <div>
+          <span class="subtitulo">Como funcionaria?</span>
+          <h2>Uma ideia simples para reduzir o desperdício.</h2>
+        </div>
+        <p>Os restaurantes informariam os resíduos orgânicos disponíveis, uma coleta seria solicitada e o material seguiria para compostagem. Neste momento, o site é apenas uma simulação para demonstrar a proposta do projeto.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container rodape">
+      <span>🌱 Composta+</span>
+      <span>Protótipo acadêmico • UPX 2</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
