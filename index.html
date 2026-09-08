@@ -6,85 +6,388 @@
   <title>Composta+ | Coleta Sustentável</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
   <header class="topo">
     <div class="container topo-conteudo">
       <a class="logo" href="#inicio">🌱 Composta+</a>
+
       <nav>
         <a href="#restaurantes">Restaurantes</a>
         <a href="#sobre">Sobre</a>
+        <a href="#cadastro">Cadastre seu estabelecimento</a>
       </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="container hero-conteudo">
-        <span class="etiqueta">ODS 12.3 • Consumo e produção responsáveis</span>
-        <h1>Transformando resíduos orgânicos em novos recursos.</h1>
-        <p>Um protótipo de plataforma para conectar restaurantes à coleta de resíduos orgânicos destinados à compostagem.</p>
-        <a class="botao botao-principal" href="#restaurantes">Ver coletas disponíveis</a>
+        <span class="etiqueta">
+          ODS 12.3 • Consumo e produção responsáveis
+        </span>
+
+        <h1>
+          Transformando resíduos orgânicos em novos recursos.
+        </h1>
+
+        <p>
+          Um protótipo de plataforma para conectar restaurantes à coleta
+          de resíduos orgânicos destinados à compostagem.
+        </p>
+
+        <a class="botao botao-principal" href="#restaurantes">
+          Ver coletas disponíveis
+        </a>
       </div>
     </section>
 
+
+    <!-- RESTAURANTES -->
     <section class="secao" id="restaurantes">
       <div class="container">
+
         <div class="titulo-secao">
           <div>
             <span class="subtitulo">Coletas disponíveis</span>
             <h2>Restaurantes participantes</h2>
           </div>
-          <span class="contador">3 locais</span>
+
+          <span class="contador" id="contador-restaurantes">3 locais</span>
         </div>
 
-        <div class="grade-cards">
+
+        <div class="grade-cards" id="lista-restaurantes">
+
           <article class="card">
             <div class="card-icone">🍽️</div>
+
             <div class="card-conteudo">
-              <span class="status">● Disponível para coleta</span>
+              <span class="status">
+                ● Disponível para coleta
+              </span>
+
               <h3>Restaurante Sabor Mineiro</h3>
-              <p class="local">📍 Centro</p>
-              <div class="residuo"><span>Resíduo orgânico</span><strong>12 kg</strong></div>
-              <button class="botao solicitar" data-restaurante="Restaurante Sabor Mineiro">Solicitar coleta</button>
+
+              <p class="local">
+                📍 Centro
+              </p>
+
+              <div class="residuo">
+                <span>Resíduo orgânico</span>
+                <strong>12 kg</strong>
+              </div>
+
+              <button
+                class="botao solicitar"
+                data-restaurante="Restaurante Sabor Mineiro">
+                Solicitar coleta
+              </button>
             </div>
           </article>
+
 
           <article class="card">
             <div class="card-icone">🍕</div>
+
             <div class="card-conteudo">
-              <span class="status">● Disponível para coleta</span>
+              <span class="status">
+                ● Disponível para coleta
+              </span>
+
               <h3>Pizzaria Bella</h3>
-              <p class="local">📍 Savassi</p>
-              <div class="residuo"><span>Resíduo orgânico</span><strong>8 kg</strong></div>
-              <button class="botao solicitar" data-restaurante="Pizzaria Bella">Solicitar coleta</button>
+
+              <p class="local">
+                📍 Savassi
+              </p>
+
+              <div class="residuo">
+                <span>Resíduo orgânico</span>
+                <strong>8 kg</strong>
+              </div>
+
+              <button
+                class="botao solicitar"
+                data-restaurante="Pizzaria Bella">
+                Solicitar coleta
+              </button>
             </div>
           </article>
+
 
           <article class="card">
             <div class="card-icone">🥗</div>
+
             <div class="card-conteudo">
-              <span class="status">● Disponível para coleta</span>
+              <span class="status">
+                ● Disponível para coleta
+              </span>
+
               <h3>Bistrô Verde</h3>
-              <p class="local">📍 Funcionários</p>
-              <div class="residuo"><span>Resíduo orgânico</span><strong>15 kg</strong></div>
-              <button class="botao solicitar" data-restaurante="Bistrô Verde">Solicitar coleta</button>
+
+              <p class="local">
+                📍 Funcionários
+              </p>
+
+              <div class="residuo">
+                <span>Resíduo orgânico</span>
+                <strong>15 kg</strong>
+              </div>
+
+              <button
+                class="botao solicitar"
+                data-restaurante="Bistrô Verde">
+                Solicitar coleta
+              </button>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
+
+    <!-- SOBRE -->
     <section class="secao secao-clara" id="sobre">
       <div class="container sobre">
+
         <div>
-          <span class="subtitulo">Como funcionaria?</span>
-          <h2>Uma ideia simples para reduzir o desperdício.</h2>
+          <span class="subtitulo">
+            Como funcionaria?
+          </span>
+
+          <h2>
+            Uma ideia simples para reduzir o desperdício.
+          </h2>
         </div>
-        <p>Os restaurantes informariam os resíduos orgânicos disponíveis, uma coleta seria solicitada e o material seguiria para compostagem. Neste momento, o site é apenas uma simulação para demonstrar a proposta do projeto.</p>
+
+        <p>
+          Os restaurantes informariam os resíduos orgânicos disponíveis,
+          uma coleta seria solicitada e o material seguiria para
+          compostagem. Neste momento, o site é apenas uma simulação
+          para demonstrar a proposta do projeto.
+        </p>
+
       </div>
     </section>
+
+
+    <!-- CADASTRO -->
+    <section id="cadastro" class="secao cadastro">
+      <div class="container">
+
+        <div class="titulo-cadastro">
+          <span class="subtitulo">CADASTRE SEU ESTABELECIMENTO</span>
+
+          <h2>Faça parte da Composta+</h2>
+
+          <p>
+            Cadastre seu estabelecimento para solicitar a coleta dos
+            resíduos orgânicos e contribuir para um destino mais sustentável.
+          </p>
+        </div>
+
+        <form id="form-cadastro" class="formulario">
+
+          <!-- DADOS DO ESTABELECIMENTO -->
+
+          <div class="cabecalho-formulario">
+            <h3>Dados do estabelecimento</h3>
+            <p>Informe os dados básicos do seu estabelecimento.</p>
+          </div>
+
+          <div class="campo">
+            <label for="nome">Nome do estabelecimento</label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Ex.: Restaurante Sabor Mineiro"
+              required
+            />
+          </div>
+
+
+          <div class="linha-formulario">
+
+            <div class="campo">
+              <label for="documento">CPF / CNPJ</label>
+
+              <input
+                type="text"
+                id="documento"
+                name="documento"
+                placeholder="CPF ou CNPJ"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="tipo">Tipo de estabelecimento</label>
+
+              <select id="tipo" name="tipo" required>
+                <option value="">Selecione</option>
+                <option value="Restaurante">Restaurante</option>
+                <option value="Pizzaria">Pizzaria</option>
+                <option value="Lanchonete">Lanchonete</option>
+                <option value="Padaria">Padaria</option>
+                <option value="Bistrô">Bistrô</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <!-- CONTATO -->
+
+          <div class="separador-formulario"></div>
+
+          <div class="cabecalho-formulario">
+            <h3>Dados de contato</h3>
+            <p>Como podemos entrar em contato com o estabelecimento?</p>
+          </div>
+
+
+          <div class="linha-formulario">
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemplo@email.com"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="telefone">Telefone</label>
+
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(31) 99999-9999"
+                required
+              />
+            </div>
+
+          </div>
+
+
+          <div class="campo">
+            <label for="endereco">Endereço</label>
+
+            <input
+              type="text"
+              id="endereco"
+              name="endereco"
+              placeholder="Rua, número, bairro e cidade"
+              required
+            />
+          </div>
+
+
+          <!-- DADOS DA COLETA -->
+
+          <div class="separador-formulario"></div>
+
+          <div class="cabecalho-formulario">
+            <h3>Informações da coleta</h3>
+            <p>
+              Informe a quantidade aproximada de resíduos e a frequência
+              desejada para a coleta.
+            </p>
+          </div>
+
+
+          <div class="linha-formulario">
+
+            <div class="campo">
+              <label for="residuo">Quantidade de resíduo</label>
+
+              <input
+                type="number"
+                id="residuo"
+                name="residuo"
+                min="1"
+                placeholder="Ex.: 10"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="frequencia">Frequência da coleta</label>
+
+              <select id="frequencia" name="frequencia" required>
+                <option value="">Selecione</option>
+                <option value="Diária">Diária</option>
+                <option value="2 vezes por semana">2 vezes por semana</option>
+                <option value="3 vezes por semana">3 vezes por semana</option>
+                <option value="Semanal">Semanal</option>
+                <option value="Quinzenal">Quinzenal</option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <div class="campo">
+            <label for="observacoes">Observações</label>
+
+            <textarea
+              id="observacoes"
+              name="observacoes"
+              placeholder="Informe alguma observação sobre a coleta..."
+            ></textarea>
+          </div>
+
+
+          <!-- DECLARAÇÃO -->
+
+          <div class="checkbox">
+
+            <input
+              type="checkbox"
+              id="declaracao"
+              name="declaracao"
+              required
+            />
+
+            <label for="declaracao">
+              Declaro que as informações fornecidas são verdadeiras e estou
+              de acordo com a utilização desses dados para fins de cadastro
+              e organização das coletas.
+            </label>
+
+          </div>
+
+
+          <!-- BOTÃO -->
+
+          <button
+            type="submit"
+            class="botao botao-principal botao-cadastro"
+          >
+            Cadastrar estabelecimento
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
   </main>
 
+
+  <!-- RODAPÉ -->
   <footer>
     <div class="container rodape">
       <span>🌱 Composta+</span>
@@ -92,6 +395,9 @@
     </div>
   </footer>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
+
