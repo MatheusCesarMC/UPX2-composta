@@ -14,7 +14,7 @@
       <a class="logo" href="#inicio">🌱 Composta+</a>
 
       <nav>
-        <a href="#restaurantes">Restaurantes</a>
+        <a href="#restaurantes">Estabelecimentos</a>
         <a href="#sobre">Sobre</a>
         <a href="#cadastro">Cadastre seu estabelecimento</a>
       </nav>
@@ -35,7 +35,7 @@
         </h1>
 
         <p>
-          Um protótipo de plataforma para conectar restaurantes à coleta
+          Um protótipo de plataforma para conectar estabelecimentos à coleta
           de resíduos orgânicos destinados à compostagem.
         </p>
 
@@ -46,19 +46,18 @@
     </section>
 
 
-    <!-- RESTAURANTES -->
+    <!-- ESTABELECIMENTOS -->
     <section class="secao" id="restaurantes">
       <div class="container">
 
         <div class="titulo-secao">
           <div>
             <span class="subtitulo">Coletas disponíveis</span>
-            <h2>Restaurantes participantes</h2>
+            <h2>Estabelecimentos participantes</h2>
           </div>
 
           <span class="contador" id="contador-restaurantes">3 locais</span>
         </div>
-
 
         <div class="grade-cards" id="lista-restaurantes">
 
@@ -66,15 +65,11 @@
             <div class="card-icone">🍽️</div>
 
             <div class="card-conteudo">
-              <span class="status">
-                ● Disponível para coleta
-              </span>
+              <span class="status">● Disponível para coleta</span>
 
               <h3>Restaurante Sabor Mineiro</h3>
 
-              <p class="local">
-                📍 Centro
-              </p>
+              <p class="local">📍 Centro</p>
 
               <div class="residuo">
                 <span>Resíduo orgânico</span>
@@ -89,20 +84,15 @@
             </div>
           </article>
 
-
           <article class="card">
             <div class="card-icone">🍕</div>
 
             <div class="card-conteudo">
-              <span class="status">
-                ● Disponível para coleta
-              </span>
+              <span class="status">● Disponível para coleta</span>
 
               <h3>Pizzaria Bella</h3>
 
-              <p class="local">
-                📍 Savassi
-              </p>
+              <p class="local">📍 Savassi</p>
 
               <div class="residuo">
                 <span>Resíduo orgânico</span>
@@ -117,20 +107,15 @@
             </div>
           </article>
 
-
           <article class="card">
             <div class="card-icone">🥗</div>
 
             <div class="card-conteudo">
-              <span class="status">
-                ● Disponível para coleta
-              </span>
+              <span class="status">● Disponível para coleta</span>
 
               <h3>Bistrô Verde</h3>
 
-              <p class="local">
-                📍 Funcionários
-              </p>
+              <p class="local">📍 Funcionários</p>
 
               <div class="residuo">
                 <span>Resíduo orgânico</span>
@@ -155,20 +140,15 @@
       <div class="container sobre">
 
         <div>
-          <span class="subtitulo">
-            Como funcionaria?
-          </span>
+          <span class="subtitulo">Como funcionaria?</span>
 
-          <h2>
-            Uma ideia simples para reduzir o desperdício.
-          </h2>
+          <h2>Uma ideia simples para reduzir o desperdício.</h2>
         </div>
 
         <p>
-          Os restaurantes informariam os resíduos orgânicos disponíveis,
-          uma coleta seria solicitada e o material seguiria para
-          compostagem. Neste momento, o site é apenas uma simulação
-          para demonstrar a proposta do projeto.
+          Os estabelecimentos informariam os resíduos orgânicos disponíveis,
+          uma coleta seria solicitada e o material seguiria para compostagem.
+          Neste momento, o site é apenas uma simulação para demonstrar a proposta do projeto.
         </p>
 
       </div>
@@ -192,8 +172,6 @@
 
         <form id="form-cadastro" class="formulario">
 
-          <!-- DADOS DO ESTABELECIMENTO -->
-
           <div class="cabecalho-formulario">
             <h3>Dados do estabelecimento</h3>
             <p>Informe os dados básicos do seu estabelecimento.</p>
@@ -211,39 +189,20 @@
             />
           </div>
 
+          <div class="campo">
+            <label for="tipo">Tipo de estabelecimento</label>
 
-          <div class="linha-formulario">
-
-            <div class="campo">
-              <label for="documento">CPF / CNPJ</label>
-
-              <input
-                type="text"
-                id="documento"
-                name="documento"
-                placeholder="CPF ou CNPJ"
-                required
-              />
-            </div>
-
-            <div class="campo">
-              <label for="tipo">Tipo de estabelecimento</label>
-
-              <select id="tipo" name="tipo" required>
-                <option value="">Selecione</option>
-                <option value="Restaurante">Restaurante</option>
-                <option value="Pizzaria">Pizzaria</option>
-                <option value="Lanchonete">Lanchonete</option>
-                <option value="Padaria">Padaria</option>
-                <option value="Bistrô">Bistrô</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </div>
-
+            <select id="tipo" name="tipo" required>
+              <option value="">Selecione</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Pizzaria">Pizzaria</option>
+              <option value="Lanchonete">Lanchonete</option>
+              <option value="Padaria">Padaria</option>
+              <option value="Bistrô">Bistrô</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Outro">Outro</option>
+            </select>
           </div>
-
-
-          <!-- CONTATO -->
 
           <div class="separador-formulario"></div>
 
@@ -251,7 +210,6 @@
             <h3>Dados de contato</h3>
             <p>Como podemos entrar em contato com o estabelecimento?</p>
           </div>
-
 
           <div class="linha-formulario">
 
@@ -281,7 +239,6 @@
 
           </div>
 
-
           <div class="campo">
             <label for="endereco">Endereço</label>
 
@@ -294,9 +251,6 @@
             />
           </div>
 
-
-          <!-- DADOS DA COLETA -->
-
           <div class="separador-formulario"></div>
 
           <div class="cabecalho-formulario">
@@ -306,7 +260,6 @@
               desejada para a coleta.
             </p>
           </div>
-
 
           <div class="linha-formulario">
 
@@ -338,7 +291,6 @@
 
           </div>
 
-
           <div class="campo">
             <label for="observacoes">Observações</label>
 
@@ -349,11 +301,7 @@
             ></textarea>
           </div>
 
-
-          <!-- DECLARAÇÃO -->
-
           <div class="checkbox">
-
             <input
               type="checkbox"
               id="declaracao"
@@ -366,11 +314,7 @@
               de acordo com a utilização desses dados para fins de cadastro
               e organização das coletas.
             </label>
-
           </div>
-
-
-          <!-- BOTÃO -->
 
           <button
             type="submit"
@@ -386,8 +330,6 @@
 
   </main>
 
-
-  <!-- RODAPÉ -->
   <footer>
     <div class="container rodape">
       <span>🌱 Composta+</span>
@@ -395,9 +337,7 @@
     </div>
   </footer>
 
-
   <script src="script.js"></script>
 
 </body>
 </html>
-
