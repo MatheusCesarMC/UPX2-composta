@@ -7,11 +7,13 @@ const contadorRestaurantes = document.getElementById("contador-restaurantes");
 let restaurantesCadastrados =
   JSON.parse(localStorage.getItem("restaurantesComposta")) || [];
 
+// Atualiza a quantidade de estabelecimentos
 function atualizarContador() {
   const quantidade = 3 + restaurantesCadastrados.length;
   contadorRestaurantes.textContent = `${quantidade} locais`;
 }
 
+// Escolhe o ícone de acordo com o tipo de estabelecimento
 function obterIcone(tipo) {
   const icones = {
     restaurante: "🍽️",
@@ -24,26 +26,36 @@ function obterIcone(tipo) {
   };
 
   const tipoNormalizado = tipo.toLowerCase();
+
   return icones[tipoNormalizado] || "🏪";
 }
 
+// Evita problemas ao mostrar textos digitados pelo usuário
 function escaparHTML(texto) {
   const div = document.createElement("div");
   div.textContent = texto;
   return div.innerHTML;
 }
 
+// Cria um card para um estabelecimento cadastrado
 function criarCard(restaurante) {
   const card = document.createElement("article");
+
   card.className = "card";
 
   card.innerHTML = `
-    <div class="card-icone">${obterIcone(restaurante.tipo)}</div>
+    <div class="card-icone">
+      ${obterIcone(restaurante.tipo)}
+    </div>
 
     <div class="card-conteudo">
       <span class="status">● Disponível para coleta</span>
+
       <h3>${escaparHTML(restaurante.nome)}</h3>
-      <p class="local">📍 ${escaparHTML(restaurante.endereco)}</p>
+
+      <p class="local">
+        📍 ${escaparHTML(restaurante.endereco)}
+      </p>
 
       <div class="residuo">
         <span>Resíduo orgânico</span>
@@ -61,6 +73,7 @@ function criarCard(restaurante) {
   listaRestaurantes.appendChild(card);
 }
 
+// Carrega os estabelecimentos cadastrados
 function carregarRestaurantes() {
   restaurantesCadastrados.forEach(function(restaurante) {
     criarCard(restaurante);
@@ -69,6 +82,7 @@ function carregarRestaurantes() {
   atualizarContador();
 }
 
+// Cadastro de novo estabelecimento
 formulario.addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -79,7 +93,8 @@ formulario.addEventListener("submit", function(event) {
   const endereco = document.getElementById("endereco").value.trim();
   const residuo = document.getElementById("residuo").value;
   const frequencia = document.getElementById("frequencia").value;
-  const observacoes = document.getElementById("observacoes").value.trim();
+  const observacoes =
+    document.getElementById("observacoes").value.trim();
 
   const novoRestaurante = {
     id: Date.now(),
@@ -101,7 +116,9 @@ formulario.addEventListener("submit", function(event) {
   );
 
   criarCard(novoRestaurante);
+
   atualizarContador();
+
   formulario.reset();
 
   alert(`Estabelecimento "${nome}" cadastrado com sucesso!`);
@@ -111,25 +128,47 @@ formulario.addEventListener("submit", function(event) {
   });
 });
 
+// Controle dos status da coleta
 document.addEventListener("click", function(event) {
   if (event.target.classList.contains("solicitar")) {
     const restaurante = event.target.dataset.restaurante;
     const card = event.target.closest(".card");
     const status = card.querySelector(".status");
 
-    if (event.target.textContent === "Solicitar coleta") {
+    const textoBotao = event.target.textContent.trim();
+
+    // Primeiro estágio
+    if (textoBotao === "Solicitar coleta") {
       status.textContent = "● Coleta solicitada";
       event.target.textContent = "Marcar como coletado";
 
-      alert(`Solicitação de coleta para "${restaurante}" registrada!`);
-    } else {
+      alert(
+        `Solicitação de coleta para "${restaurante}" registrada!`
+      );
+    }
+
+    // Segundo estágio
+    else if (textoBotao === "Marcar como coletado") {
       status.textContent = "● Coletado";
-      event.target.textContent = "Coletado";
+      event.target.textContent = "Encaminhar para compostagem";
+
+      alert(
+        `Coleta de "${restaurante}" realizada!`
+      );
+    }
+
+    // Terceiro estágio
+    else {
+      status.textContent = "● Em compostagem";
+      event.target.textContent = "Em compostagem";
       event.target.disabled = true;
 
-      alert(`Coleta de "${restaurante}" realizada!`);
+      alert(
+        `Resíduo de "${restaurante}" encaminhado para compostagem!`
+      );
     }
   }
 });
 
+// Inicia os estabelecimentos salvos
 carregarRestaurantes();
