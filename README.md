@@ -79,6 +79,26 @@ O resíduo deixa de ser tratado apenas como descarte e passa a ter potencial de 
 
 ---
 
+## ▶️ Como executar o projeto
+
+O Composta+ é um projeto web simples e não possui servidor ou banco de dados.
+
+### Opção 1 — Abrir diretamente
+
+Baixe ou clone o repositório e abra o arquivo:
+
+`index.html`
+
+no navegador.
+
+### Opção 2 — Usando o VS Code
+
+Abra a pasta do projeto no VS Code e execute o arquivo `index.html` com uma extensão como **Live Server**.
+
+Depois, acesse o endereço local exibido pela extensão no navegador.
+
+---
+
 ## 💻 Tecnologias utilizadas
 
 O projeto foi desenvolvido utilizando tecnologias básicas de desenvolvimento web:
