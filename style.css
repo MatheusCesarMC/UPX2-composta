@@ -13,14 +13,26 @@
    CONFIGURAÇÕES GERAIS
    ============================== */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   color: #333;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
-  width: 90%;
+  width: 92%;
   max-width: 1100px;
   margin: auto;
 }
@@ -36,10 +48,14 @@ body {
 }
 
 .topo-conteudo {
-  height: 70px;
+  min-height: 70px;
+  padding: 12px 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  gap: 20px;
 }
 
 .logo {
@@ -47,16 +63,21 @@ body {
   font-size: 22px;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 nav {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
   color: #555;
+  font-size: 15px;
 }
 
 nav a:hover {
@@ -86,6 +107,8 @@ nav a:hover {
 .hero h1 {
   color: #174d35;
   font-size: 50px;
+  line-height: 1.1;
+
   margin-top: 15px;
   margin-bottom: 20px;
 }
@@ -93,6 +116,7 @@ nav a:hover {
 .hero p {
   color: #666;
   font-size: 18px;
+  line-height: 1.6;
   margin-bottom: 30px;
 }
 
@@ -105,19 +129,27 @@ nav a:hover {
   border: none;
   padding: 12px 18px;
   border-radius: 8px;
+
   cursor: pointer;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .botao-principal {
+  display: inline-block;
+
   background-color: #174d35;
   color: white;
   text-decoration: none;
 }
 
+.botao-principal:hover {
+  background-color: #123d2a;
+}
+
 
 /* ==============================
-   RESTAURANTES
+   SEÇÕES
    ============================== */
 
 .secao {
@@ -134,6 +166,9 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  gap: 20px;
+
   margin-bottom: 30px;
 }
 
@@ -145,8 +180,12 @@ nav a:hover {
 .contador {
   background-color: white;
   border: 1px solid #ddd;
+
   padding: 8px 12px;
+
   border-radius: 20px;
+
+  white-space: nowrap;
 }
 
 
@@ -156,7 +195,10 @@ nav a:hover {
 
 .grade-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
   gap: 20px;
 }
 
@@ -164,18 +206,30 @@ nav a:hover {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 10px;
+
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .card-icone {
   background-color: #e8f5ed;
+
   text-align: center;
+
   font-size: 45px;
+
   padding: 35px;
 }
 
 .card-conteudo {
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
 }
 
 .status {
@@ -187,6 +241,8 @@ nav a:hover {
 .card h3 {
   margin-top: 10px;
   margin-bottom: 5px;
+
+  color: #222;
 }
 
 .local {
@@ -196,8 +252,13 @@ nav a:hover {
 .residuo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
   margin: 20px 0;
   padding: 15px 0;
+
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
@@ -208,12 +269,71 @@ nav a:hover {
 
 .solicitar {
   width: 100%;
+  margin-top: auto;
+
   background-color: #2f7d57;
   color: white;
 }
 
 .solicitar:hover {
   background-color: #256646;
+}
+
+.solicitar:disabled {
+  background-color: #999;
+  cursor: default;
+}
+
+
+/* ==============================
+   INDICADORES
+   ============================== */
+
+.indicadores {
+  background-color: #f5f5f5;
+}
+
+.indicadores-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.indicador {
+  background-color: white;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  padding: 30px 20px;
+
+  text-align: center;
+}
+
+.indicador-icone {
+  display: block;
+
+  font-size: 32px;
+
+  margin-bottom: 10px;
+}
+
+.indicador strong {
+  display: block;
+
+  color: #174d35;
+
+  font-size: 30px;
+
+  margin-bottom: 5px;
+}
+
+.indicador p {
+  color: #666;
+  line-height: 1.4;
 }
 
 
@@ -227,7 +347,9 @@ nav a:hover {
 
 .sobre {
   display: flex;
+
   gap: 50px;
+
   align-items: center;
 }
 
@@ -239,26 +361,12 @@ nav a:hover {
 .sobre h2 {
   color: #174d35;
   margin-top: 5px;
+  line-height: 1.3;
 }
 
 .sobre p {
   color: #666;
-}
-
-
-/* ==============================
-   RODAPÉ
-   ============================== */
-
-footer {
-  background-color: #174d35;
-  color: white;
-  padding: 20px 0;
-}
-
-.rodape {
-  display: flex;
-  justify-content: space-between;
+  line-height: 1.7;
 }
 
 
@@ -267,21 +375,28 @@ footer {
    ============================== */
 
 .cadastro {
-  background: #f4f8f3;
+  background-color: #f4f8f3;
 }
 
 .titulo-cadastro {
   max-width: 700px;
+
   margin: 0 auto 40px;
+
   text-align: center;
 }
 
 .titulo-cadastro h2 {
+  color: #174d35;
+
   margin: 8px 0 12px;
+
+  line-height: 1.3;
 }
 
 .titulo-cadastro p {
   color: #667064;
+
   line-height: 1.6;
 }
 
@@ -291,23 +406,33 @@ footer {
    ============================== */
 
 .formulario {
+  width: 100%;
   max-width: 800px;
+
   margin: 0 auto;
+
   padding: 35px;
-  background: #ffffff;
+
+  background-color: white;
+
   border-radius: 18px;
-  box-shadow: 0 10px 35px rgba(30, 70, 35, 0.08);
+
+  box-shadow:
+    0 10px 35px rgba(30, 70, 35, 0.08);
 }
 
 .campo {
   display: flex;
   flex-direction: column;
+
   margin-bottom: 20px;
 }
 
 .campo label {
   margin-bottom: 8px;
+
   font-weight: 600;
+
   color: #263526;
 }
 
@@ -315,27 +440,36 @@ footer {
 .campo select,
 .campo textarea {
   width: 100%;
-  box-sizing: border-box;
+
   padding: 13px 14px;
+
   border: 1px solid #d5ddd3;
+
   border-radius: 9px;
-  background: #fbfcfb;
+
+  background-color: #fbfcfb;
+
   font-family: inherit;
+
   font-size: 15px;
+
   color: #263526;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
   outline: none;
+
   border-color: #4c8c4a;
-  box-shadow: 0 0 0 3px rgba(76, 140, 74, 0.12);
+
+  box-shadow:
+    0 0 0 3px rgba(76, 140, 74, 0.12);
 }
 
 .campo textarea {
   resize: vertical;
+
   min-height: 100px;
 }
 
@@ -346,7 +480,10 @@ footer {
 
 .linha-formulario {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 20px;
 }
 
@@ -357,19 +494,27 @@ footer {
 
 .checkbox {
   display: flex;
+
   align-items: flex-start;
+
   gap: 10px;
+
   margin: 10px 0 25px;
 }
 
 .checkbox input {
   margin-top: 4px;
+
   accent-color: #4c8c4a;
+
+  flex-shrink: 0;
 }
 
 .checkbox label {
   font-size: 14px;
+
   line-height: 1.5;
+
   color: #667064;
 }
 
@@ -380,54 +525,14 @@ footer {
 
 .botao-cadastro {
   width: 100%;
+
   border: none;
+
   cursor: pointer;
+
   font-size: 16px;
 }
 
-
-/* ==============================
-   RESPONSIVO
-   ============================== */
-
-@media (max-width: 800px) {
-  .grade-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre {
-    display: block;
-  }
-
-  .sobre div,
-  .sobre p {
-    width: 100%;
-  }
-
-  .sobre p {
-    margin-top: 20px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-}
-
-
-@media (max-width: 700px) {
-  .linha-formulario {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .formulario {
-    padding: 25px 20px;
-  }
-
-  .titulo-cadastro {
-    margin-bottom: 30px;
-  }
-}
 
 /* ==============================
    CABEÇALHOS DO FORMULÁRIO
@@ -439,152 +544,231 @@ footer {
 
 .cabecalho-formulario h3 {
   color: #174d35;
+
   font-size: 20px;
+
   margin-bottom: 6px;
 }
 
 .cabecalho-formulario p {
   color: #667064;
+
   font-size: 14px;
+
   line-height: 1.5;
 }
 
 
 /* ==============================
-   SEPARADORES DO FORMULÁRIO
+   SEPARADORES
    ============================== */
 
 .separador-formulario {
   height: 1px;
+
   background-color: #e1e7df;
+
   margin: 35px 0;
 }
 
+
 /* ==============================
-   RESPONSIVO - CADASTRO
+   RODAPÉ
+   ============================== */
+
+footer {
+  background-color: #174d35;
+
+  color: white;
+
+  padding: 20px 0;
+
+  margin-top: auto;
+}
+
+.rodape {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* ==============================
+   TABLETS
+   ============================== */
+
+@media (max-width: 900px) {
+
+  .topo-conteudo {
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 15px 0;
+  }
+
+  nav {
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .sobre {
+    gap: 30px;
+  }
+
+  .indicadores-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* ==============================
+   CELULARES
    ============================== */
 
 @media (max-width: 700px) {
 
-  /* Área de cadastro */
-
-  .cadastro {
-    padding: 45px 0;
+  .container {
+    width: 90%;
   }
 
-  .titulo-cadastro {
+  .topo-conteudo {
+    min-height: auto;
+  }
+
+  nav {
     width: 100%;
-    margin-bottom: 30px;
-    padding: 0 5px;
+
+    flex-direction: column;
+
+    gap: 10px;
   }
 
-  .titulo-cadastro h2 {
-    font-size: 28px;
-    line-height: 1.2;
+  nav a {
+    font-size: 14px;
   }
 
-  .titulo-cadastro p {
-    font-size: 15px;
-    line-height: 1.5;
+
+  /* Hero */
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .botao-principal {
+    width: 100%;
+
+    text-align: center;
+  }
+
+
+  /* Títulos */
+
+  .titulo-secao {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .contador {
+    align-self: flex-start;
+  }
+
+
+  /* Sobre */
+
+  .sobre {
+    display: block;
+  }
+
+  .sobre div,
+  .sobre p {
+    width: 100%;
+  }
+
+  .sobre p {
+    margin-top: 25px;
+  }
+
+
+  /* Indicadores */
+
+  .indicadores-grid {
+    grid-template-columns: 1fr;
   }
 
 
   /* Formulário */
 
   .formulario {
-    width: 100%;
     padding: 25px 18px;
+
     border-radius: 14px;
-    box-shadow: 0 5px 20px rgba(30, 70, 35, 0.08);
   }
 
+  .linha-formulario {
+    grid-template-columns: 1fr;
 
-  /* Cabeçalhos das partes */
-
-  .cabecalho-formulario {
-    margin-bottom: 20px;
+    gap: 0;
   }
 
   .cabecalho-formulario h3 {
     font-size: 18px;
   }
 
-  .cabecalho-formulario p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-
-  /* Duas colunas viram uma coluna */
-
-  .linha-formulario {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-
-  /* Campos */
-
-  .campo {
-    margin-bottom: 18px;
-  }
-
-  .campo label {
-    font-size: 14px;
-    margin-bottom: 7px;
-  }
-
   .campo input,
   .campo select,
   .campo textarea {
-    width: 100%;
-    min-height: 46px;
-    padding: 12px;
     font-size: 16px;
-    border-radius: 8px;
   }
 
   .campo textarea {
     min-height: 110px;
   }
 
-
-  /* Separadores */
-
-  .separador-formulario {
-    margin: 28px 0;
-  }
-
-
-  /* Checkbox */
-
-  .checkbox {
-    gap: 9px;
-    margin: 8px 0 22px;
-  }
-
-  .checkbox input {
-    flex-shrink: 0;
-    margin-top: 3px;
-  }
-
   .checkbox label {
     font-size: 13px;
-    line-height: 1.5;
   }
-
-
-  /* Botão */
 
   .botao-cadastro {
-    width: 100%;
     min-height: 48px;
-    padding: 13px 15px;
-    font-size: 15px;
-    border-radius: 8px;
   }
+
+
+  /* Rodapé */
+
+  .rodape {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
 }
+
 
 /* ==============================
    CELULARES PEQUENOS
@@ -592,13 +776,28 @@ footer {
 
 @media (max-width: 400px) {
 
-  .cadastro {
-    padding: 35px 0;
+  .container {
+    width: 92%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .secao {
+    padding: 45px 0;
   }
 
   .formulario {
     padding: 22px 15px;
-    border-radius: 12px;
   }
 
   .titulo-cadastro h2 {
@@ -609,24 +808,8 @@ footer {
     font-size: 14px;
   }
 
-  .cabecalho-formulario h3 {
-    font-size: 17px;
+  .indicador strong {
+    font-size: 27px;
   }
 
-  .campo input,
-  .campo select,
-  .campo textarea {
-    font-size: 16px;
-  }
-
-  .botao-cadastro {
-    font-size: 14px;
-  }
-}
-
-
-
-.solicitar:disabled {
-  background-color: #999;
-  cursor: default;
 }
