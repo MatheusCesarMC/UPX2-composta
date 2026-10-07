@@ -117,11 +117,18 @@ document.addEventListener("click", function(event) {
     const card = event.target.closest(".card");
     const status = card.querySelector(".status");
 
-    status.textContent = "● Coleta solicitada";
-    event.target.textContent = "Coleta solicitada";
-    event.target.disabled = true;
+    if (event.target.textContent === "Solicitar coleta") {
+      status.textContent = "● Coleta solicitada";
+      event.target.textContent = "Marcar como coletado";
 
-    alert(`Solicitação de coleta para "${restaurante}" registrada!`);
+      alert(`Solicitação de coleta para "${restaurante}" registrada!`);
+    } else {
+      status.textContent = "● Coletado";
+      event.target.textContent = "Coletado";
+      event.target.disabled = true;
+
+      alert(`Coleta de "${restaurante}" realizada!`);
+    }
   }
 });
 
