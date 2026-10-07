@@ -114,6 +114,13 @@ formulario.addEventListener("submit", function(event) {
 document.addEventListener("click", function(event) {
   if (event.target.classList.contains("solicitar")) {
     const restaurante = event.target.dataset.restaurante;
+    const card = event.target.closest(".card");
+    const status = card.querySelector(".status");
+
+    status.textContent = "● Coleta solicitada";
+    event.target.textContent = "Coleta solicitada";
+    event.target.disabled = true;
+
     alert(`Solicitação de coleta para "${restaurante}" registrada!`);
   }
 });
