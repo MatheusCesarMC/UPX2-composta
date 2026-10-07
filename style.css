@@ -624,3 +624,9 @@ footer {
   }
 }
 
+
+
+.solicitar:disabled {
+  background-color: #999;
+  cursor: default;
+}
